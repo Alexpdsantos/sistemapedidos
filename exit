@@ -1,0 +1,35 @@
+[33mcommit 38217362fad52944ddcd532c33b35e1b0bcb026b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Alex Santos <amelo3433@gmail.com>
+Date:   Mon Feb 21 22:56:30 2022 -0300
+
+    Criando Operação de instanciação (SistemaPedidosApplication)
+
+[33mcommit f0b6fec78f19aad4b91e391adb4b7f604506b05c[m
+Author: Alex Santos <amelo3433@gmail.com>
+Date:   Sun Feb 20 23:09:09 2022 -0300
+
+    Repository e service criados para Categoria
+
+[33mcommit 75cc09e5fc3f326e4b301a4f78b25ae0def9fcac[m
+Author: Alex Santos <amelo3433@gmail.com>
+Date:   Thu Feb 17 23:33:48 2022 -0300
+
+    Breve alteração
+
+[33mcommit 78aab52320b20dbdc6b5f22e519ac0e12b52b830[m
+Author: Alex Santos <amelo3433@gmail.com>
+Date:   Sun Feb 13 22:20:03 2022 -0300
+
+    Testando a primeira classe de domíio
+
+[33mcommit e59e282916b53dc65f1f4c46743cd106211350fc[m
+Author: Alex Santos <amelo3433@gmail.com>
+Date:   Fri Feb 11 00:07:15 2022 -0300
+
+    Rest Testado!
+
+[33mcommit 79aa3c9601479cbf61b151b04ddf7092dec900dc[m
+Author: Alex Santos <amelo3433@gmail.com>
+Date:   Thu Feb 10 23:45:46 2022 -0300
+
+    Projeto criado!
