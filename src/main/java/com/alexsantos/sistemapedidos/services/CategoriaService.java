@@ -16,6 +16,6 @@ public class CategoriaService {
 
 	public Categoria buscar(Integer id) {
 		Optional<Categoria> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElse(null);
 	}
 }
