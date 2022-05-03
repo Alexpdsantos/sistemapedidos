@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.alexsantos.sistemapedidos.domain.Categoria;
+import com.alexsantos.sistemapedidos.dto.CategoriaDTO;
 import com.alexsantos.sistemapedidos.repositories.CategoriaRepository;
 import com.alexsantos.sistemapedidos.services.exceptions.DataIntegrityException;
 import com.alexsantos.sistemapedidos.services.exceptions.ObjectNotFoundException;
@@ -55,5 +56,8 @@ public class CategoriaService {
 		return repository.findAll(pageRequest);
 	}
 		
-
+	public Categoria fromDTO(CategoriaDTO objDto) {
+		return new Categoria(objDto.getId(), objDto.getNome());
+	}
+	
 }
