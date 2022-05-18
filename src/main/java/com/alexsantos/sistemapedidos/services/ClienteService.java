@@ -11,7 +11,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.alexsantos.sistemapedidos.domain.Cidade;
 import com.alexsantos.sistemapedidos.domain.Cliente;
 import com.alexsantos.sistemapedidos.domain.Endereco;
 import com.alexsantos.sistemapedidos.domain.enums.TipoCliente;
@@ -56,7 +55,7 @@ public class ClienteService {
 		try {
 			repository.deleteById(id);
 		} catch (DataIntegrityViolationException e) {
-			throw new DataIntegrityException("Não é possível excluir pois há entidades relacionadas!");
+			throw new DataIntegrityException("Não é possível excluir pois há pedidos relacionados!");
 		}
 	}
 
@@ -72,7 +71,7 @@ public class ClienteService {
 	public Cliente fromDTO(ClienteNewDTO objDto) {
 		Cliente cli = new Cliente(null, objDto.getNome(), objDto.getEmail(), objDto.getCpfOuCnpj(),
 				TipoCliente.toEnum(objDto.getTipo()));
-		Cidade cidade = new Cidade(objDto.getCidadeId(), null, null);
+		//Cidade cidade = new Cidade(objDto.getCidadeId(), null, null);
 		Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getNumero(), objDto.getComplemento(),
 				objDto.getBairro(), objDto.getCep(), cli, null);
 		cli.getEnderecos().add(end);
