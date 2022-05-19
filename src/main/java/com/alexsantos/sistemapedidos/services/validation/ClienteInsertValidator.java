@@ -6,12 +6,20 @@ import java.util.List;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.alexsantos.sistemapedidos.domain.Cliente;
 import com.alexsantos.sistemapedidos.domain.enums.TipoCliente;
 import com.alexsantos.sistemapedidos.dto.ClienteNewDTO;
+import com.alexsantos.sistemapedidos.repositories.ClienteRepository;
 import com.alexsantos.sistemapedidos.resources.exceptions.FieldMessage;
 import com.alexsantos.sistemapedidos.services.validation.utils.BR;
 
 public class ClienteInsertValidator implements ConstraintValidator<ClienteInsert, ClienteNewDTO> {
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
 	@Override
 	public void initialize(ClienteInsert ann) {
 	}
@@ -26,6 +34,11 @@ public class ClienteInsertValidator implements ConstraintValidator<ClienteInsert
 		
 		if(objDto.getTipo().equals(TipoCliente.PESSOAJURIDICA.getCod()) && !BR.isValidCNPJ(objDto.getCpfOuCnpj())) {
 			list.add(new FieldMessage("cpfOuCnpj", "CNPJ Inválido!"));
+		}
+		
+		Cliente aux = clienteRepository.findByEmail(objDto.getEmail());
+		if(aux !=null) {
+			list.add(new FieldMessage("email", "Email já está cadastrado!"));
 		}
 		
 		for (FieldMessage e : list) {
